@@ -11,8 +11,22 @@ TG = "https://t.me/s/greeks_of_SaintPetersburg"
 GREEKSPB = "https://greekspb.com/"
 GLOBUS = "https://globus.aquaviva.ru/khram-svt-nikolaya-chudotvortsa-i-mts-tsaritsy-aleksandry-putilovskiy/photo"
 TEMPLE = "https://putilovskij-hram.ru"
-PHOTOS = [f"https://greekspb.com/wp-content/uploads/2025/11/photo_2025-11-28_{n}.jpg"
-          for n in ("16-07-20", "16-07-30", "16-06-57", "16-08-16")]
+GALLERY = [
+ ("steps1",  {"ru":"Участники встречи у входа в храм","el":"Οι συμμετέχοντες στην είσοδο του ναού","en":"Participants at the church entrance"}),
+ ("steps2",  {"ru":"Встреча греческого сообщества у храма","el":"Συνάντηση της ελληνικής κοινότητας έξω από τον ναό","en":"Greek community gathering outside the church"}),
+ ("church1", {"ru":"После богослужения в храме","el":"Μετά την ακολουθία στον ναό","en":"After the service in the church"}),
+ ("yard1",   {"ru":"Во дворе у трапезной храма","el":"Στην αυλή δίπλα στην τράπεζα του ναού","en":"In the courtyard by the church refectory"}),
+ ("yard2",   {"ru":"Гости и члены общины во дворе храма","el":"Προσκεκλημένοι και μέλη της κοινότητας στην αυλή του ναού","en":"Guests and community members in the church courtyard"}),
+ ("asterix", {"ru":"Семейный праздник в трапезной, 1 июня 2026","el":"Οικογενειακή γιορτή στην τράπεζα, 1 Ιουνίου 2026","en":"Family gathering in the refectory, 1 June 2026"}),
+ ("may25-1", {"ru":"Панихида по жертвам геноцида, май 2025","el":"Μνημόσυνο για τα θύματα της Γενοκτονίας, Μάιος 2025","en":"Memorial service for the genocide victims, May 2025"}),
+ ("may25-2", {"ru":"Настоятель на панихиде, май 2025","el":"Ο προϊστάμενος στο μνημόσυνο, Μάιος 2025","en":"The rector at the memorial service, May 2025"}),
+ ("may25-3", {"ru":"Участники памятной встречи, май 2025","el":"Οι συμμετέχοντες στην εκδήλωση μνήμης, Μάιος 2025","en":"Participants of the commemoration, May 2025"}),
+ ("may25-4", {"ru":"Приветствие за чаепитием в трапезной, май 2025","el":"Χαιρετισμός κατά το τσάι στην τράπεζα, Μάιος 2025","en":"A greeting at the tea in the refectory, May 2025"}),
+ ("athos1",  {"ru":"Афон: иллюстрации к циклу лекций «Благость Афона»","el":"Άγιον Όρος: εικόνες για τον κύκλο διαλέξεων «Η Χάρις του Άθω»","en":"Athos: illustrations for the lecture cycle “The Grace of Athos”"}),
+ ("athos2",  {"ru":"Афон: иллюстрации к циклу лекций «Благость Афона»","el":"Άγιον Όρος: εικόνες για τον κύκλο διαλέξεων «Η Χάρις του Άθω»","en":"Athos: illustrations for the lecture cycle “The Grace of Athos”"}),
+]
+CARD_IMG = {"kids":"asterix","pontos25":"may25-1"}
+RECTOR_IMG = "rector"
 
 # ---------- события (общая часть: даты, ссылки) ----------
 # ключ: (sort, iso, tg-link)
@@ -77,12 +91,12 @@ def T(lang):
             more="Источник анонса", tr_place="Трапезная храма (пр. Стачек, 48Б)", ch_place="Храм, пр. Стачек, 48",
             upcoming="Недавно", past="Архив",
             media_h="Фото и видео",
-            media_p="Фоторепортажи, анонсы и видео встреч публикуются на страницах прихода и общества греков. Ниже — ссылки и несколько фотографий с сайта общества.",
+            media_p="Фоторепортажи, анонсы и видео встреч публикуются на страницах прихода и общества греков. Ниже — ссылки и фотографии встреч.",
             media_links=[(VK,"ВКонтакте: страница Путиловского храма","Анонсы, фотоотчёты и новости прихода"),
                          (TG,"Telegram: «Греки Санкт-Петербурга»","Анонсы и отчёты, более 500 фото и 80 видео (канал общества, не только храм)"),
                          (GREEKSPB,"Сайт общества «Греки Санкт-Петербурга»","Новости, отчёты и речи на памятных встречах"),
                          (GLOBUS,"«Глобус» Санкт-Петербургской митрополии","Фоторепортажи из храма")],
-            photo_cap="Фото: сайт общества греков Санкт-Петербурга (greekspb.com)",
+            photo_cap="Фотографии встреч — из материалов общества греков Санкт-Петербурга (Telegram-канал, greekspb.com) и прихода.",
             contacts_h="Контактная информация",
             c_addr_l="Адрес", c_addr="Санкт-Петербург, проспект Стачек, 48 (трапезная — 48Б)",
             c_hours_l="Часы работы", c_hours="ежедневно с 09:00 до 19:00",
@@ -122,12 +136,12 @@ def T(lang):
             more="Πηγή ανακοίνωσης", tr_place="Τράπεζα του ναού (Λεωφ. Στάτσεκ 48Β)", ch_place="Ναός, Λεωφ. Στάτσεκ 48",
             upcoming="Πρόσφατα", past="Αρχείο",
             media_h="Φωτογραφίες και βίντεο",
-            media_p="Φωτογραφικό υλικό, ανακοινώσεις και βίντεο των συναντήσεων δημοσιεύονται στις σελίδες της ενορίας και της ελληνικής κοινότητας. Παρακάτω θα βρείτε συνδέσμους και λίγες φωτογραφίες από τον ιστότοπο της κοινότητας.",
+            media_p="Φωτογραφικό υλικό, ανακοινώσεις και βίντεο των συναντήσεων δημοσιεύονται στις σελίδες της ενορίας και της ελληνικής κοινότητας. Παρακάτω θα βρείτε συνδέσμους και φωτογραφίες των συναντήσεων.",
             media_links=[(VK,"VK: σελίδα του Ναού Πουτίλοφ","Ανακοινώσεις, φωτογραφίες και νέα της ενορίας"),
                          (TG,"Telegram: «Έλληνες της Αγίας Πετρούπολης»","Ανακοινώσεις και αναφορές, πάνω από 500 φωτογραφίες και 80 βίντεο (κανάλι της κοινότητας, όχι μόνο για τον ναό)"),
                          (GREEKSPB,"Ιστότοπος των Ελλήνων της Αγίας Πετρούπολης","Νέα, αναφορές και ομιλίες σε εκδηλώσεις μνήμης"),
                          (GLOBUS,"«Globus» της Μητρόπολης Αγίας Πετρούπολης","Φωτορεπορτάζ από τον ναό")],
-            photo_cap="Φωτογραφίες: ιστότοπος των Ελλήνων της Αγίας Πετρούπολης (greekspb.com)",
+            photo_cap="Φωτογραφίες των συναντήσεων — από υλικό της κοινότητας των Ελλήνων (κανάλι Telegram, greekspb.com) και της ενορίας.",
             contacts_h="Στοιχεία επικοινωνίας",
             c_addr_l="Διεύθυνση", c_addr="Αγία Πετρούπολη, Λεωφόρος Στάτσεκ 48 (τράπεζα — 48Β)",
             c_hours_l="Ώρες λειτουργίας", c_hours="καθημερινά 09:00–19:00",
@@ -166,12 +180,12 @@ def T(lang):
         more="Announcement source", tr_place="Church refectory (48B Stachek Ave.)", ch_place="Church, 48 Stachek Ave.",
         upcoming="Recent", past="Archive",
         media_h="Photos and video",
-        media_p="Photo reports, announcements and videos of the meetings are published on the parish and community pages. Below are links and a few photographs from the community's website.",
+        media_p="Photo reports, announcements and videos of the meetings are published on the parish and community pages. Below are links and photographs of the meetings.",
         media_links=[(VK,"VK: Putilov Church page","Announcements, photo reports and parish news"),
                      (TG,"Telegram: “Greeks of St Petersburg”","Announcements and reports, 500+ photos and 80+ videos (the community's channel, not only the church)"),
                      (GREEKSPB,"Website of the Greeks of St Petersburg","News, reports and speeches from memorial events"),
                      (GLOBUS,"“Globus” of the St Petersburg Metropolis","Photo reports from the church")],
-        photo_cap="Photos: website of the Greeks of St Petersburg (greekspb.com)",
+        photo_cap="Photographs of the meetings — from materials of the Greek community (Telegram channel, greekspb.com) and the parish.",
         contacts_h="Contact information",
         c_addr_l="Address", c_addr="St Petersburg, Stachek Avenue 48 (refectory — 48B)",
         c_hours_l="Opening hours", c_hours="daily 09:00–19:00",
@@ -244,15 +258,17 @@ def render(lang):
         pl = t["ch_place"] if place == "church" else t["tr_place"]
         when = fmt_date(lang, iso) + (f" · {tm}" if tm else "")
         old = iso < "2026-01-01"
+        im = f'<img class="cimg" src="../assets/img/{CARD_IMG[key]}.jpg" loading="lazy" alt="{html.escape(title)}">' if key in CARD_IMG else ""
         cards.append(
-            f'<article class="card{" old" if old else ""}"><div class="when">{when}</div>'
+            f'<article class="card{" old" if old else ""}">{im}<div class="when">{when}</div>'
             f'<h3>{html.escape(title)}</h3><p>{body}</p>'
             f'<div class="meta"><span>{html.escape(pl)}</span> · {a(link, html.escape(t["more"]))}</div></article>')
     media = "".join(
         f'<a class="link" href="{html.escape(h)}" target="_blank" rel="noopener"><strong>{html.escape(n)}</strong><span>{html.escape(d)}</span></a>'
         for h, n, d in t["media_links"])
     photos = "".join(
-        f'<figure><img src="{p}" loading="lazy" alt="" onerror="this.parentNode.style.display=\'none\'"></figure>' for p in PHOTOS)
+        f'<figure><a href="../assets/img/{k}.jpg" target="_blank"><img src="../assets/img/{k}.jpg" loading="lazy" alt="{html.escape(c[lang])}"></a><figcaption>{html.escape(c[lang])}</figcaption></figure>'
+        for k, c in GALLERY)
     return f"""<!doctype html>
 <html lang="{lang}">
 <head>
@@ -280,7 +296,7 @@ def render(lang):
   <h2>{html.escape(t['about_h'])}</h2>
   <div class="two">
     <div><h3>{html.escape(t['hist_h'])}</h3>{hist}</div>
-    <div class="panel"><h3>{html.escape(t['rector_h'])}</h3><p class="name">{html.escape(t['rector_name'])}</p>{rect}</div>
+    <div class="panel"><h3>{html.escape(t['rector_h'])}</h3><img class="portrait" src="../assets/img/{RECTOR_IMG}.jpg" alt="{html.escape(t['rector_name'])}"><p class="name">{html.escape(t['rector_name'])}</p>{rect}</div>
   </div>
 </div></section>
 
@@ -356,9 +372,12 @@ h3{color:var(--navy);margin:0 0 10px;font-size:20px}
 .link{display:block;background:var(--cream);border:1px solid var(--line);padding:14px 16px;border-radius:4px;text-decoration:none;color:var(--ink)}
 .link strong{display:block;color:var(--navy)}.link span{font-size:14px;color:var(--muted)}
 .link:hover{border-color:var(--gold)}
-.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.photos img{width:100%;height:200px;object-fit:cover;border-radius:4px;border:1px solid var(--line)}
-figure{margin:0}.cap{font:13px system-ui,sans-serif;color:var(--muted)}
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.photos img{width:100%;height:200px;object-fit:cover;border-radius:4px;border:1px solid var(--line);display:block}
+figure{margin:0}figcaption{font:13px system-ui,sans-serif;color:var(--muted);margin-top:4px}
+.cimg{width:100%;height:190px;object-fit:cover;border-radius:3px;margin-bottom:10px}
+.portrait{width:100%;border-radius:4px;margin-bottom:12px}
+.cap{font:13px system-ui,sans-serif;color:var(--muted)}
 .contacts{display:grid;grid-template-columns:170px 1fr;gap:10px 20px;max-width:760px}
 .contacts dt{font-weight:bold;color:var(--navy)}.contacts dd{margin:0}
 footer{background:var(--navy-d);color:#c5cde0;padding:26px 0;font:14px system-ui,sans-serif}
