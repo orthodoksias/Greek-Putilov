@@ -6,6 +6,11 @@ OUT = "/home/claude/Greek-Putilov"
 
 GR_CONS = "https://www.mfa.gr/russia/ru/consulate-general-st-petersburg/"
 CY_CONS = "http://www.mfa.gov.cy/mfa/consulate/consulate_spb.nsf/index_ru/index_ru?OpenDocument"
+GR_NEW = "https://www.mfa.gr/russia/geniko-proxeneio-agias-petroupoles/"
+GR_BY = {"ru": GR_CONS, "el": GR_NEW, "en": GR_NEW}
+CY_BY = {"ru": "https://www.gov.cy/mfa-consgenstpetersburg/en/",
+         "el": "https://www.gov.cy/mfa-consgenstpetersburg/",
+         "en": "https://www.gov.cy/mfa-consgenstpetersburg/en/"}
 VK = "https://vk.ru/putilovsky1906"
 TG = "https://t.me/s/greeks_of_SaintPetersburg"
 GREEKSPB = "https://greekspb.com/"
@@ -61,7 +66,7 @@ def a(href, text):
 
 # ---------- тексты ----------
 def T(lang):
-    gr, cy = GR_CONS, CY_CONS
+    gr, cy = GR_BY[lang], CY_BY[lang]
     if lang == "ru":
         return dict(
             lang="ru", title="Греческий клуб Путиловского храма",
@@ -322,7 +327,7 @@ def render(lang):
     <dt>{html.escape(t['c_vk_l'])}</dt><dd>{a(VK, html.escape(t['c_vk']))}</dd>
     <dt>{html.escape(t['c_site_l'])}</dt><dd>{a(TEMPLE, 'putilovskij-hram.ru')}</dd>
     <dt>{html.escape(t['c_tg_l'])}</dt><dd>{a(TG, html.escape(t['c_tg']))}</dd>
-    <dt>{html.escape(t['c_cons_l'])}</dt><dd>{a(GR_CONS, html.escape(t['c_gr']))}<br>{a(CY_CONS, html.escape(t['c_cy']))}</dd>
+    <dt>{html.escape(t['c_cons_l'])}</dt><dd>{a(GR_BY[lang], html.escape(t['c_gr']))}<br>{a(CY_BY[lang], html.escape(t['c_cy']))}</dd>
   </dl>
 </div></section>
 </main>
