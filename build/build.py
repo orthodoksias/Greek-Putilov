@@ -30,13 +30,13 @@ GALLERY = [
  ("athos1",  {"ru":"Афон: иллюстрации к циклу лекций «Благость Афона»","el":"Άγιον Όρος: εικόνες για τον κύκλο διαλέξεων «Η Χάρις του Άθω»","en":"Athos: illustrations for the lecture cycle “The Grace of Athos”"}),
  ("athos2",  {"ru":"Афон: иллюстрации к циклу лекций «Благость Афона»","el":"Άγιον Όρος: εικόνες για τον κύκλο διαλέξεων «Η Χάρις του Άθω»","en":"Athos: illustrations for the lecture cycle “The Grace of Athos”"}),
 ]
-CARD_IMG = {"kids":"asterix","pontos25":"may25-1"}
+CARD_IMG = {"oxi26":"oxi26","kids":"asterix","pontos25":"may25-1"}
 RECTOR_IMG = "rector"
 
 # ---------- события (общая часть: даты, ссылки) ----------
 # ключ: (sort, iso, tg-link)
 EVENTS = [
-    ("2026-10-25", "https://t.me/greeks_of_SaintPetersburg/986", "oxi26"),
+    ("2026-10-25", "https://vk.ru/wall-240062495_34", "oxi26"),
     ("2026-07-24", "https://t.me/c/1945782712/5873", "film2"),
     ("2026-06-07", "https://t.me/greeks_of_SaintPetersburg/887", "athos2"),
     ("2026-06-01", "https://t.me/greeks_of_SaintPetersburg/890", "kids"),
@@ -205,7 +205,7 @@ def T(lang):
 # ---------- тексты событий ----------
 def self_events_ru(gr, cy):
     return {
-     "oxi26": ("Молебен ко Дню «Охи»", "Торжественный молебен по случаю национального праздника Греции. Приглашало Генеральное консульство Греции; богослужение провёл настоятель, отец Владимир, после службы — чаепитие.", "12:00", "church"),
+     "oxi26": ("Литургия и молебен на греческом языке ко Дню «Охи»", f"В Неделю 21-ю по Пятидесятнице, в день памяти святых отцов VII Вселенского Собора, в канун национального праздника Греции совершены Литургия и Доксология на греческом языке. Службу провели настоятель протоиерей Владимир Гончаренко и священник Максим Никулин (оба — преподаватели СПбДА); пел праздничный хор храма. Среди молящихся были члены греческой общины, сотрудники консульств ({a(gr,'Греции')} и {a(cy,'Кипра')}) и прихожане. Отец Владимир сказал: «Этот праздник является национальным праздником Греции и Кипра, но он также близок всем нам и объединяет наши народы. В воспоминаемых событиях было явлено заступничество Пресвятой Богородицы». После богослужения общение продолжилось за чаепитием.", "12:00", "church"),
      "film2": ("Киноклуб: «Счастье в Афинах» (1955)", "Первый фильм Михалиса Какоянниса на языке оригинала с русскими субтитрами. Перед показом Александр Данилов рассказал о режиссёре — создателе «Грека Зорбы», «Стеллы», «Электры». Организатор — Общество греков Санкт-Петербурга.", "19:30", "tr"),
      "athos2": ("Лекция «Свято-Пантелеймонов монастырь — ключевой центр русского православия на Афоне»", "Вторая лекция цикла «Благость Афона». Лектор — Сергей Леонидович Бровко.", "12:00", "tr"),
      "kids": ("Праздник ко Дню защиты детей", "Семейная встреча: просмотр мультфильма «Двенадцать подвигов Астерикса», угощение, игры и беседы. Благодарность — отцу Владимиру за гостеприимство и Эммануилу Папуцоглу за угощение.", "", "tr"),
@@ -220,7 +220,7 @@ def self_events_ru(gr, cy):
 
 def self_events_el(gr, cy):
     return {
-     "oxi26": ("Δοξολογία για την Εθνική Εορτή της 28ης Οκτωβρίου", "Πανηγυρική δοξολογία για την εθνική εορτή. Πρόσκληση από το Γενικό Προξενείο της Ελλάδος· τέλεσε ο προϊστάμενος π. Βλαδίμηρος και ακολούθησε τσάι.", "12:00", "church"),
+     "oxi26": ("Θεία Λειτουργία και Δοξολογία στα ελληνικά για την εθνική εορτή του «Όχι»", f"Την Κυριακή ΚΑ΄ των Επιστολών (μνήμη των Αγίων Πατέρων της Ζ΄ Οικουμενικής Συνόδου), παραμονή της εθνικής εορτής, τελέστηκαν Θεία Λειτουργία και Δοξολογία στα ελληνικά. Λειτούργησαν ο προϊστάμενος πρωτοπρεσβύτερος Βλαδίμηρος Γκοντσαρένκο και ο ιερέας Μαξίμ Νικούλιν (και οι δύο διδάσκουν στην Πνευματική Ακαδημία)· έψαλε η χορωδία του ναού. Παρέστησαν μέλη της ελληνικής κοινότητας, υπάλληλοι των προξενείων ({a(gr,'Ελλάδος')} και {a(cy,'Κύπρου')}) και ενορίτες. Ο π. Βλαδίμηρος τόνισε ότι η εορτή είναι εθνική για την Ελλάδα και την Κύπρο, αλλά και κοντινή σε όλους και ενώνει τους λαούς μας· στα γεγονότα που τιμώνται φάνηκε η προστασία της Παναγίας. Μετά την ακολουθία η συντροφιά συνεχίστηκε με τσάι.", "12:00", "church"),
      "film2": ("Κινηματογραφική λέσχη: «Ευτυχία στην Αθήνα» (1955)", "Η πρώτη ταινία του Μιχάλη Κακογιάννη στο πρωτότυπο με ρωσικούς υπότιτλους. Πριν την προβολή ο Αλεξάντρ Ντανίλοφ μίλησε για τον σκηνοθέτη του «Ζορμπά», της «Στέλλας» και της «Ηλέκτρας». Διοργάνωση: Ελληνική Κοινότητα Αγίας Πετρούπολης.", "19:30", "tr"),
      "athos2": ("Διάλεξη «Η Ιερά Μονή Αγίου Παντελεήμονος — κέντρο της ρωσικής ορθοδοξίας στο Άγιον Όρος»", "Δεύτερη διάλεξη του κύκλου «Η Χάρις του Άθω». Ομιλητής: Σεργκέι Λεονίντοβιτς Μπρόβκο.", "12:00", "tr"),
      "kids": ("Γιορτή για την Παγκόσμια Ημέρα του Παιδιού", "Οικογενειακή συνάντηση με προβολή του κινούμενου σχεδίου «Οι 12 άθλοι του Αστερίξ», φαγητό, παιχνίδια και κουβέντα. Ευχαριστίες στον π. Βλαδίμηρο για τη φιλοξενία και στον Εμμανουήλ Παπουτσόγλου για το κέρασμα.", "", "tr"),
@@ -235,7 +235,7 @@ def self_events_el(gr, cy):
 
 def self_events_en(gr, cy):
     return {
-     "oxi26": ("Doxology for “Ohi” Day", "A festive service for the Greek national holiday, at the invitation of the Consulate General of Greece. Fr Vladimir led the service, followed by tea.", "12:00", "church"),
+     "oxi26": ("Liturgy and Doxology in Greek for “Ohi” Day", f"On the 21st Sunday after Pentecost, the day of the Holy Fathers of the Seventh Ecumenical Council, on the eve of the Greek national holiday, the Divine Liturgy and a Doxology were served in Greek. The services were led by the rector, Archpriest Vladimir Goncharenko, and Priest Maxim Nikulin (both teach at the St Petersburg Theological Academy); the festive church choir sang. Those praying included members of the Greek community, staff of the consulates ({a(gr,'Greece')} and {a(cy,'Cyprus')}) and parishioners. Fr Vladimir said that the holiday is a national one for Greece and Cyprus, yet close to all of us and unites our peoples, and that in the events remembered the intercession of the Mother of God was revealed. After the service, fellowship continued over tea.", "12:00", "church"),
      "film2": ("Film club: “Happiness in Athens” (1955)", "Michael Cacoyannis's first feature, in the original Greek with Russian subtitles. Before the screening Alexander Danilov spoke about the director of “Zorba the Greek”, “Stella” and “Electra”. Organised by the Society of the Greeks of St Petersburg.", "19:30", "tr"),
      "athos2": ("Lecture: “The St Panteleimon Monastery — the key centre of Russian Orthodoxy on Athos”", "The second lecture in the cycle “The Grace of Athos”, given by Sergei L. Brovko.", "12:00", "tr"),
      "kids": ("Children's Day gathering", "A family evening: the cartoon “The Twelve Tasks of Asterix”, food, games and conversation. Thanks to Fr Vladimir for his hospitality and to Emmanuel Papoutsoglou for the treats.", "", "tr"),
